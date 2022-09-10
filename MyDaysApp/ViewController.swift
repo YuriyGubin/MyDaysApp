@@ -12,17 +12,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var resultButton: UIButton!
     
+    
     private var numberOfDays = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resultButton.layer.cornerRadius = 15
+
         
     }
 
     @IBAction func resultButtonTapped() {
-        infoLabel.text = "You enjoy your life for \(numberOfDays) days"
+        infoLabel.text = "Ты наслаждаешься жизнью уже \(numberOfDays)"
     }
     
     @IBAction func datePicker(_ sender: UIDatePicker) {
