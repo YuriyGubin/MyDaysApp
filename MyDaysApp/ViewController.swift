@@ -28,7 +28,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func datePicker(_ sender: UIDatePicker) {
-        guard sender.date < Date.now else { return }
+        guard sender.date < Date.now else {
+            infoLabel.text = "Дата должна быть меньше сегодняшней"
+            return }
         let range = sender.date..<Date.now
         numberOfDays = range.formatted(.components(style: .wide, fields: [.day]))
     }
