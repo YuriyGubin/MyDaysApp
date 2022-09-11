@@ -57,6 +57,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxD-lo-FWo">
+                                <rect key="frame" x="142" y="588.5" width="130" height="60"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="1Q1-zb-WnP"/>
+                                    <constraint firstAttribute="height" constant="60" id="rEL-Mu-HMu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Обнулить">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BcZ-mu-lBZ"/>
+                                    <action selector="resultButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1A-BT-YuZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -69,12 +91,15 @@
                             <constraint firstItem="JEy-pL-LFf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NGq-DR-lTE"/>
                             <constraint firstItem="U9c-WH-hBx" firstAttribute="top" secondItem="JEy-pL-LFf" secondAttribute="bottom" constant="20" id="O1r-i4-puz"/>
                             <constraint firstItem="p7M-Y4-BKq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UQe-2q-e0e"/>
+                            <constraint firstItem="IxD-lo-FWo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGy-W5-I3M"/>
+                            <constraint firstItem="IxD-lo-FWo" firstAttribute="top" secondItem="U9c-WH-hBx" secondAttribute="bottom" constant="30" id="dcr-PM-pWb"/>
                             <constraint firstItem="p7M-Y4-BKq" firstAttribute="top" secondItem="usP-wd-nXh" secondAttribute="bottom" constant="20" id="eR4-I9-53V"/>
                             <constraint firstItem="JEy-pL-LFf" firstAttribute="top" secondItem="p7M-Y4-BKq" secondAttribute="bottom" constant="20" id="gne-Kn-ja7"/>
                             <constraint firstItem="usP-wd-nXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="otc-Cy-EDM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePickerOutlet" destination="p7M-Y4-BKq" id="5au-N9-H0M"/>
                         <outlet property="infoLabel" destination="U9c-WH-hBx" id="yaI-va-EJf"/>
                         <outlet property="resultButton" destination="JEy-pL-LFf" id="WUk-7b-qWB"/>
                     </connections>

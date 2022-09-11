@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var resultButton: UIButton!
-    
+    @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
     private var numberOfDays = ""
     
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resultButton.layer.cornerRadius = 15
-
+        datePickerOutlet.maximumDate = Date.now
         
     }
 
@@ -28,13 +28,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func datePicker(_ sender: UIDatePicker) {
-        guard sender.date < Date.now else {
-            infoLabel.text = "Дата должна быть меньше сегодняшней"
-            resultButton.isEnabled = false
-            return }
-        resultButton.isEnabled = true
+
         let range = sender.date..<Date.now
         numberOfDays = range.formatted(.components(style: .wide, fields: [.day]))
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        datePickerOutlet.date = Date.now
+        let tap: UIDatePicker = UIDatePicker()
+        datePicker(tap)
     }
 }
 
